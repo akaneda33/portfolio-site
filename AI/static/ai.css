@@ -66,3 +66,57 @@ main {
 .picture:nth-of-type(even) {
     margin-left: auto;
 }
+
+.animation-target {
+    position: relative;
+    overflow: hidden;
+}
+/*最初透明にしておく*/
+.animation-target > a,
+.animation-target > div {
+    opacity: 0;
+}
+
+@keyframes showElements {/*最初見えてる状態から最後見えてる状態にしてあげる*/
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animation-target.show > a,
+.animation-target.show > div {
+    animation: showElements .01s .9s forwards;/*一瞬でパッと表示させる。forwardsで最後の状態を止めてあげる。*/
+    /*0.9秒遅らせることで重なった瞬間に遅らせることが出来る*/
+}
+/*animation-targetがついてるもの全てに処理を施すのでbeforeを使う*/
+.animation-target::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#eee, skyblue);
+    transform: translateX(-100%);/*その要素分左側に移動*/
+}
+
+@keyframes showMask {
+    0% {/*最初は左側に置いておく*/
+     transform: tranlateX(-100%);
+    }
+    45%, 55% {
+        transform: translateX(0%);/*真ん中に来たら止めてあげる*/
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.animation-target.show::before {
+    animation: showMask 1.8s forwards;/*keyframesを呼び出す。このコードを施すと、左から右に移動*/
+}

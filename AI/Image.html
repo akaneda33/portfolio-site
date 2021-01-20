@@ -45,6 +45,35 @@
         <li>学習済みモデル<br>学習済みパラメータが組み込まれた推論プログラムのこと。</li>    
         <li>推論プログラム<br>組み込まれた学習済みパラメータを適用することで、入力に対して一定の結果が出力されることを可能にするプログラムのこと。</li>
         <li>画像認識アプリの制作では、重み付きファイルを生成する必要がある！まあ、それが一般に、.h5ファイルね。</li>
+        <ul>
+            <li>Herokuでは登録できるアプリの上限は５個まで。もし削除するんだったら、<br>heroku destroy アプリ名</li>
+            <li>エラーが出る！<br>そういう時はとりあえず、heroku logs --tail</li>
+            <li>slug sizeが大きすぎて拒否られます。<br>モデルの重み付きファイルである.h5が重いときは、 heroku -repo でファイルサイズを縮小しよう。<br>
+            ファイルに余計なデータセットとか含まれてたら削除するのもアリ。</li>
+            <h1>Herokuにデプロイするのに用意するもの</h1>
+            <table>
+                <tr><th>名称</th><th>内容</th><th>作り方</th></tr>
+                <tr><td>runtime.txt</td><td>Pythonのバージョンを記述</td><td>メモ帳にpythonのversion書くだけ多分。</td></tr>
+                <tr><td>requirements.txt</td><td>インストールするモジュールを記述</td><td>ターミナルで、pip freeze > requirements.txt</td></tr>
+                <tr><td>procfile</td></tr>
+            </table>
+            <h1>デプロイ奮闘記</h1>
+            <li>たかだかデプロイ、されどデプロイ。Herokuのページいったら普通はNew Appsの項目があるのにさ、なんかうちの環境だとでないからさ（怒り）CUIで操作してやんよ。<br>
+            まずherokuにあるアプリの存在を調べるために、heroku apps　打ったら既にアプリが５個あったから消すかってことで heroku destroy アプリ名　で実行したら何故かエラーが出たから、<br>
+            heroku apps:destroy --app アプリ名　ってやったらまたアプリ名を打ってって指令がでたから、その通りアプリ名を打ってやると、destroyに成功した。<br>
+            heroku create アプリ名としたところ、ここでもエラーが出た故、<br>
+            C:\Users\akane\OneDrive\デスクトップ>heroku create で敢行。そしたら出ましたねえ。<br>
+            Creating app... done, ⬢ sheltered-anchorage-76999<br>
+            https://sheltered-anchorage-76999.herokuapp.com/ | https://git.heroku.com/sheltered-anchorage-76999.git<br>
+            C:\Users\akane\OneDrive\デスクトップ>heroku git:remote -a sheltered-anchorage-76999  を実行。<br>
+            set git remote heroku to https://git.heroku.com/sheltered-anchorage-76999.git<br>
+            C:\Users\akane\OneDrive\デスクトップ>git add .<br>正直、カレントディレクトリの場所が不安というか絶対間違ってる気がするん。だってgit statusやったらえぐい量のディレクトリ表示されたもん。
+            <br>いいのさ。こういう経験を超えてエンジニアとして強くなっていくんだきっと…。<br>
+            C:\Users\akane\OneDrive\デスクトップ>git commit -m "mnist_app"<br>
+            C:\Users\akane\OneDrive\デスクトップ>git push heroku master<br>
+            error: failed to push some refs to 'https://git.heroku.com/sheltered-anchorage-76999.git'<br>
+            なんかgit push heroku masterの実行でdoneとか出てきて途中までめっちゃ良い感じだったけ最終的にエラーが出た。感触としてはあと一歩って感じ。</li>
+        </ul>
 
         <h1>Abstract concepts</h1>
         <li>Encapsulation<br></li>
