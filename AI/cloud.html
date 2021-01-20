@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td, th { border: 2px solid purple; }
+    </style>
+    
+</head>
+<body>
+   
+
+    <h2>webサイトが動く仕組み</h2>
+    <li>webブラウザがサーバにリクエストを送ってそのリクエストに対してPHPやJavaといったサーバーサイドスクリプトが必要な情報をデータベースから<br>
+    抽出してその情報を見やすい状態に整えてクライアントに返す。</li>
+    <h2>JavaとPHPとPythonの違い</h2>
+    <h3>Java</h3><li>変数を宣言する際に、変数の型も定義。</li>正直組み込みの方がイメージ強かった。<li></li>Andoroidの開発可能。
+    <h3>PHP<br>衝撃的なことに、文脈に沿って型が変わるらしい。便利なような不便なような？エラーが出たらどうやって解消していくんだろうか。<br>
+        まあ規模が小さい開発だったらphpは使い勝手がいいのではないかと推察。</h3>
+    <h3>Python<br>処理が遅いらしい</h3>
+    <h4>ここではクラウドサービスについて紹介する。</h4>
+    <h2>そもそもクラウドサービスとは</h2>
+    <li>インターネットを通してデータやアプリを提供するサービス。アカウントを持っていればサービスを享受できる。</li>
+    <h1>Azure</h1>
+    <li>世間でAzureが叫ばれてるからミーハーな私も使ってみるかということでAzureを使って回帰分析やら機械学習やってみた。<br>
+    コード書かなくていいとかもう画期的じゃん！個人的にapple社のiphone発売と同じくらい衝撃的…。<br>
+    これからAzure勉強会もやる予定だから知識身に付けたらまたこの場にメモする！</li>
+    <h1>AWS</h1>
+    <li>最近、AWSめっちゃ人気じゃないですか？知り合いのデータサイエンティストがデータ分析でAWS使う場面があるとか言ってたからデータコンペに参加する私には気になる次第。<br>
+    webサービスとスマホアプリを切実に作りたい。まじでスマホアプリ作りたい。mac買わなかった過去の自分を殴りたい。<br>
+    いや、wibdowsもこよなく愛してるよ。けど、macの方がプログラミングと圧倒的に相性が良いんよ。自然言語処理で使うmecabとかmacには標準で備わってんのに、<br>
+    windowsは面倒なパスを通す作業をしなきゃいけない。（だるかった。）私はコマンドラインは好きだけどパスは極力いじくりたくないんよ…。なんとなくPCに怒られてる気がして…</li>
+    <li>サービスの種類が豊富。</li>
+    <li>実績が豊富だから開発する際にネットでググれば情報がいっぱい出てくる。</li>
+    <li>月額料金が分かりにくい</li>
+    
+    <h2>IaaS</h2>
+    <li>インターネット回線などのネットワーク、ハードディスクなどのストレージ、CPUやメモリを提供するサービス。</li>
+    <li>VPC<br>ネットワークを提供する。</li>
+    <li>EC2(AWS)<br>仮想サーバ。webサービスを立ち上げる上で必要なwebサーバやデータベースサーバの構築が可能。いやLolipopでええやんって思うかもしれないけど<br>
+    こっちの方がスタミナがあるっぽい。</li>
+    <table>
+        <tr><th>VM</th><th>OS</th><th>CPU</th><th>SSD</th><th>NIC</th></tr>
+        <tr><td>AWS</td><td>AMI</td><td>インスタンスタイプ</td><td>EBS</td><td>ENI</td></tr>
+    </table>    
+    <li>S3<br>オンラインストレージ</li>
+    <h2>PaaS</h2>
+    <li>IaaS+OSやデータベースなどミドルウェアがインストールされているサービスのこと。</li>
+    <h2>SaaS</h2>
+    <li>PaaS+アプリケーションを提供するサービスのこと。</li>
+    <li>クラウドストレージサービス<br>Dropbox GoogleDrive OneDrive</li>
+    <h2>GCP</h2>
+    <li>もう精度が素晴らしすぎて自分で機械学習する気なくすんだがw 暇があったらGCPに突っ込んで楽しんでる。<br>
+    ちなみに今まで私がGCPで試したことは以下の通り。</li>
+    <h3>Speech to text<br>pyaudioを遥かにしのぐ精度。</h3>
+    <h3>Vision api<br>手書き文章をocrにかけてテキスト変換したいと思って、tesseractなら可能という噂を聞きつけた私はtesseractをインストールし、<br>
+    コードを書いて実行したところ、デジタルの文章はね認識できたんだけど、手書きは全然ダメだったね。（誰だよ出来るって言った奴。笑）<br>
+    頼みの綱はGoogle apiしかないということで実行したところちゃんと手書きの文章をテキスト変換できました( ´∀｀ )</h2>
+    <h3>Spread Sheet API<br>これはラインのチャットボットと連携させるのに使った。話変わるけでラインチャットボットまじで作るの楽しい。<br>
+    ぜひdiango使ってもっと本格的なもの作ってみたい次第。</h3>
+    <h3>Natural Language API<br>テキストから感情認識。</h3>
+
+
+    <table>
+        <tr><th></th><th>IaaS</th><th>Paas</th><th>SaaS</th></tr>
+        <tr><td>Microsoft</td><td>Azure</td><td>Azure</td><td>office365</td></tr>
+        <tr><td>Google</td><td>GCP</td><td>GCP</td><td>G Suite</td></tr>
+        <tr><td>Amazon</td><td>AWS</td><td>AWS</td><td>AmazonRDS</td></tr>
+    </table>    
+
+    <h1>Docker</h1>
+        
+</html>

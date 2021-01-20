@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <ul><h1>環境系エラー</h1>
+        <li>Error: Your Xcode (11.6) is too outdated.<br>
+        つまり Xcodeが古いから App storeのアップデートからXcodeをアップデートする必要がある。</li>
+        <li>まさかのpipが使えなくなった。。<br>easy_install pip　で解決！</li>
+        <LI>Python hoge.pyを実行したら、そのアドレスはもう使用されていると出るんだけど。
+        <br>Flaskでapi使う時は同一のアドレスは使えないから、プロセスごと削除するのにkill プロセス番号　を実行しなきゃだね。</LI>
+        <h1>画像系エラー</h1>
+        <li>expected 3, got 0 が出る。<br>画像が読み込めていない。</li>
+    </ul>
+    <h1>Numpy</h1>
+    <li>arr.sort(1)の1は何を意味するのか？<br>
+    axisを指す。例えば３次元配列ndarrayにおいては、縦がazis=0、横がaxis=1、奥行きがaxis=2となる。</li>
+    <li>resize<br>実際に配列の数を変える。</li>
+    <li>reshape<br>次元数を変える。（要素数は同じ！）</li>
+    <h1>Pandas</h1>
+    <Li>axisはアキシスと読む。</Li>
+    <li>locはlocationの略。ilocはindexの略。0番目から2番目の要素を抽出<br>
+    df.loc[0:2, ['列名', '列名']]　(start)~(end)<br>df.iloc[0:3, 0:4] (start)~(end+1)</li>
+    <li>行を条件で抽出したい<br>queryメソッドを使う　df.query('age < 25')みたいな</li>
+    <LI>列を条件抽出したい<br> isinメソッドを使う　df['age'].isin(['30'])</LI>
+    <Li>Uniqueは一次元のデータつまりSeriesにしか適用できない。だからDataFrameには適用できない。つまりカラムを一つずつ取り出す必要がある</Li>
+    <LI>重複した行を削除したい<br>df=df.drop_duplicates()</LI>
+    <LI>列名を変更するには、renameメソッドで辞書型使う。<br>df.rename(columns={'A': 'a'})</LI>
+    <LI>ユニークな列要素の出現回数をカウントしたい<br>df['age'].value_counts()</LI>
+    <li>print("\n")で２段分改行される。</li>
+    <li>フィルだごとダウンロードしたい<br>一度全てのフォルダをzipファイルに圧縮し、ダウンロードする<br>
+    import shutil<br>shutil.make_archive('./contents', 'zip', root_dir='.')</li>
+    <h1>Google Colaboratory</h1>
+    <li>マウントとは<br>Google Colab上でGoogleドライブのファイルを使えるようにする処理のこと</li>
+    <h1>オブジェクト指向</h1>
+    <ol><li>カプセル化<br>変数や関数をクラスを利用して一つのインスタンス内に閉じ込めることで、
+        誤った変数や関数のオーバーライトなどを防ぐことです。</li>
+        例えば同じ実行コード内に複数の同じ名前の変数を利用してしまった場合の事故等を防ぐことができます。
+        <li>継承<br>たとえばデータ整形等のモデル学習前の変わらない根幹部分を親クラスとして定義し、その子クラスとして
+            試行したいモデルパターンに応じて複数の子クラスを定義する(SVM/ランダムフォレスト/DNN等)ことです。
+            これによりデータ整形だけを変えたい場合などに複数のモデルパターン分のコードをすべて変更せず、1回の変更で済むといった利点があります。
+        </li>
+        <li>ポリモーフィズム</li></ol>
+    <li>機械学習におけるオブジェクト指向のメリット<br>複数の異なるモデルを同じフォーマット(前処理⇒[様々なモデルの構築・学習]⇒検証⇒実データ適用)で処理できる点です。</li> 
+    <h2>おススメ書籍</h2>
+<img src="./png/kaggle.jpg" height="300px" alt="title_img">   
+</body>
+</html>

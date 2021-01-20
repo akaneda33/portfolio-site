@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="static/main.css">
+  <!--deferをいれないとhtmlが読み込まれる前にjavascriptが実行されてしまう-->
+  <script src="app.js" defer></script>
+  <style>
+    .a_button {
+      display: inline-block;
+      border-style: solid;
+      background-color: lightgray;
+      border-width:1px;
+      border-color: darkgray;
+      color: black;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="example">
+    <img src="png/03.jpg" height="300px" alt="title_img">
+    <!--Programming Noteにlavascriptとcssでアニメーションをかけるためにクラスを設定。-->
+    <div class="textAnimation">Programming Note</div>
+  </div>
+
+  <div class="box" id="makeImg">
+    <h1 style="text-align:left"><font color="red">~Introduction~</font></h1>
+    <h2 style="text-align:left"><font color="black">Welcome to Programming Note!
+    <br>This site introduces knowledge about programming.<br>
+    It is an article for people who are not beginners but are not intermediate.</font></h2>
+  </div>
+
+  <header><h1 style="text-align:center">~Machine learning~</h1></header>
+  <a class="a_button" href="AI/ai.html"><font size="20">Click Here!</font></a>
+
+    <header><h1 style="text-align:center">~Other~</h1></header>
+    <ul style="list-style:none">
+      <li><a href="AI/html&css.html"><font size="20">HTML&CSS</font></a></li>
+    <li><a href="AI/javascript.html"><font size="20">JavaScript</font></a></li>
+    <li><a href="AI/database.html"><font size="20">DataBase</font></a></li>
+    <li><a href="AI/cmd.html"><font size="20">Commandline</font></a></li>
+    <li><font size="20">Node.js</font></a></li>
+    <li><a href="AI/serverside.html"><font size="20">Server-side <Script></Script></font></a></li>
+    <li><a href="AI/git.html"><font size="20">Git</font></a></li>
+    <li><a href="AI/heroku.html"><font size="20">Heroku</font></a></li>
+    <li><a href="AI/cloud.html"><font size="20">Cloud</font></a></li>
+    <li><a href="AI/system.html"><font size="20">Network</font></a></li>
+    <li><a href="AI/assembly.html"><font size="20">Hardware</font></a></li>
+    <li><a href="AI/math.html"><font size="20">math</font></a></li>
+  </ul>
+  
+ <main>
+    <ul class="contents" style="list-style:none">
+      <li class="animationTarget">
+        <img src="png/frontend.jpg" alt="test">
+        <div class="contentsText">
+          <h2>Front end</h2>
+          <p>Contains notes about the front end<br>
+          Describes the  meanings of html, css, javascript code</p>
+        </div>
+      </li>
+
+      <li class="animationTarget">
+        <img src="png/backend.jpg" alt="test">
+        <div class="contentsText">
+          <h2>Back end</h2>
+          <p>Contains notes about the back end<br>
+          There is a note about how to use the server and github.</p>
+        </div>
+      </li>
+     
+      <li class="animationTarget">
+        <img src="png/system.jpg" alt="test">
+        <div class="contentsText">
+          <h2>System</h2>
+          <p>Contains notes about the network<br>
+            The knowledge about the network that I personally care about is written down</p>
+        </div>
+      </li>
+      
+      <li class="animationTarget">
+        <img src="png/mathematics.jpg" alt="test">
+        <div class="contentsText">
+          <h2>Mathematics</h2>
+          <p>Contains notes about Mathematics<br>
+            Contains the knowledge of mathematics required for programming</p>
+        </div>
+      </li>
+    </ul>
+ </main>
+ <!--
+<h3><a href="./templates/menbership.html"><font size="20">会員の方はこちら</font></a></h3>-->
+</body>
+</html>

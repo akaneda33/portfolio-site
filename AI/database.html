@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>What is SQL?</h1>
+    <h2>Database language, not programming language.</h2>
+    <h3>データベースを初期化するには、最初の１回だけ以下のコマンドを実行する必要がある。<br>python setup_database.py<br>そしたら「ok」って返ってきたw</h3>
+    <h3>RDBMS</h3>
+    <h3>TinyDB</h3>
+    <h3>SQLite</h3>
+    <h3>MySQL</h3>
+    <h3>PostgreSQL</h3>
+    <ul>
+        <li>テーブルからデータを抽出したい。<br>SELECT[取得したい要素] FROM [使用テーブル];</li>
+        <li>実行結果の重複レコードを１つにまとめたい。<br>SELECT DISTINCT 列名 列名 FROM テーブル名;</li>
+        <li>特定の条件を満たすレコードを取り出す。「グループ化される前に、特定ユーザーを省く」<br>SELECT フィールド名 FROM テーブル名 WHEWE 条件式;</li>
+        <li>サブクエリ<br>SQL文の中に入れ子になってSQL文が書いていること。</li>
+        <li>合計を求めたい。<br>SELECT SUM(得点) FROM 試験結果; </li>
+        <li>平均を求めたい。<br>SELECT SUM(得点) FROM 試験結果; </li>
+        <li>数を数えたい<br> SELECT COUNT(得点) FROM 試験結果;</li>
+        <li>指定したグループの最大値を取得したい。<br>SELECT MAX(抜き出すカラム) AS カラム名 FROM テーブル名;</li>
+        <li>指定したグループの最小値を取得したい。<br>SELECT MIN(抜き出すカラム) AS カラム名 FROM テーブル名;</li>
+        <li>種類ごとに集計関数を利用する。例えばチームとの人数を数える。GROUP BY</li>
+    </ul>
+</body>
+</html>

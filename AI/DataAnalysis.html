@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<<device-width>>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <h1><font color="blue">Leveraging Big Data</font></h1>
+        <li>For example, send personal information to advertisers the moment they hover over the eating log.<br>
+        Advertisers use the personal information they are given to determine whether they should be advertising to their targets.<br>
+        If an advertiser decides they want to put an ad on their target, the advertiser will win the bid.<br>
+        We call this sysytem Real Time Bldding, For short, RTB.  In the ad tech industry, there are Google, Amazon, etc.  </li>
+        <li>So how do adtech companies get big data?<br>
+        They use Location data, Receipt history.
+        </li>
+        <h1><font color="blue">Stock Price Prediction</font></h1>
+        <h2>Domain knowledge</h2>
+        <li>lInvestment trusts<br>
+            A product that summarizes money collected from investors as one large fund and is invested and operated by management experts in stocks, bonds, etc.
+        </li>
+        <li>Technical analysis<br>
+            It represents past price movements in a chart, and from there, we grasp trends and patterns, and predict future stock prices and exchange rate trends.</li>
+        <li>Fundamental analysis<br>
+            It analyzes how changes in economic trends, monetary policy, fiscal policy, etc. affect the market as a whole in order to grasp the major direction of the market.</li>
+            <h1>The machine learning techniques needed to make stock forecasts</h1>
+        <li>Decision tree analysis<br>
+            This is an analysis method that calculates probabilities based on whether they belong to conditions such as Yes/No.
+        </li>
+        <h1>Bagging & Boosting</h1>
+        <li></li>
+        <h1><font color="blue">Regression</font></h1>
+        <h2>Steps</h2>
+        <ol>
+            <li></li>
+        </ol>
+        <li>スパース性とは<br>物事の本質的な特徴を決定づける要素はわずかであるという性質。英語でスカスカという意味。</li>
+        <li>特徴選択とは<br>機械学習モデルの予測精度の改善を目的として訓練データの中からターゲットの予測により、強い関連がある特徴を選択すること。</li>
+        <li>正規化を行う前に<br>外れ値を外そう。もしこの操作が逆だったら、正規化施したら０側にデータが偏ってしまう。</li>
+        <h1>Time Series Analysis</h1>
+        <h2>Preprocessing</h2>
+        <ol>
+            <li>外れ値を除去。<br>時系列分析における外れ値は時間当たりの変化量の大きさが他と明らかに違うってなった時に判断する。</li>
+            <li>欠損値の処理。欠損値が少なかったら<br>前後の値を用いて線形補完。欠損値が多かったら、あるあるだけど、説明変数を使用しない。</li>
+            <li>ノイズが確認されたら<br>ローパスフィルタ（低周波数帯域の信号だけを通す）やハイパスフィルタ（高周波数帯域の信号だけを通す）で波形を整形。<br>
+            ちなみにホワイトイズはこれら二つの処理を施しても完全に取り除くことは不可能。</li>
+            <li></li></ol>
+        <h2>標準化のコード出てくる、fit()とtransform()とfit.transform()の違いって何？</h2>
+        <li>fit()は渡されたデータの統計情報の計算を行う。</li>
+        <li>transfrom()はfit()の結果を利用して処理。</li>
+        <li>fit.tranform()はfit()とtrasnform()を一括で行う。</li> 
+        <li>トレーニングデータはトレーニングデータ自体を使って統計情報を取得し、それを元に処理を行うため、fit_transform()を使用。<br>
+        一方テストデータはトレーニングデータで得た統計から処理を行いたいためtransform()のみを使用。</li>   
+        <h1><font color="blue">Multi-value classification</font></h1>
+        <h1>可視化したい！</h1>
+        <li></li>
+    </ul>
+</body>
+</html>

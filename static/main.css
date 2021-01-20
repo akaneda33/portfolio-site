@@ -1,0 +1,250 @@
+/*外部CSSの文字コードは外部CSS内の「@charset」で指定*/
+@charset "utf-8";
+/*exampleクラスの装飾*/
+.example {
+    position: relative;
+    }
+/*「Proggraming Note」という文字列に対するアニメーション*/  
+  .example div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    }
+/*exampleクラスの中の写真（冒頭の写真）の装飾*/  
+  .example img {
+    width: 100%;
+    border-radius: 20px;
+    }
+/*lwtter-spacingで「Programing Note」の文字間を指定*/
+  .textAnimation {
+       color: #fff;
+       font-size: 50px;
+       letter-spacing: .05em;
+    }
+    /*Programming Noteの下にまた一行追加したくなった用に、行間を空けるためのコード*/
+   .textAnimation:not(:first-of-type) {
+       margin-top: 20px;
+   } 
+  
+  
+ .box {
+      margin       : auto;
+      width        : 100%;
+      height       : 200px;
+      background   : linear-gradient(to bottom, #C0C0C0, #FFF);
+      border-radius: 20px;
+}
+
+.box h1 {
+    animation: titleAnimation 1.5s;
+}
+
+.box h2 {
+    animation: titleAnimation 1.5s;
+}
+
+/*奇数番目は上からゆっくり出てくるようにする*/
+    @keyframes showTextFromTop {
+        0% {/*tranlteYはその要素自体。文字の高さ分下に隠す。*/
+            transform: translateY(-100%);
+        }
+        100% {/*最終的に元に戻す*/
+            transform: translateY(0px);
+        }
+    }
+/*偶数番目は下からゆっくり出てくるようにする*/
+    @keyframes showTextFromBottom {
+        0% {
+            transform: translateY(100%);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+
+   .textAnimation span {
+       /*inline-blockで下からふわっとアニメーションをかける*/
+     display: inline-block;
+   }
+   /*外側（親要素）のspan。外側のspanを内側のspanが超えたら見えないようにする。*/
+   .textAnimation > span {
+     overflow: hidden;
+   }
+   .textAnimation > span:nth-of-type(odd) > span {
+     animation:  showTextFromTop ease-out 2s backwards;
+   }
+   .textAnimation > span:nth-of-type(even) > span {
+    animation:  showTextFromBottom ease-out 2s backwards;
+   }
+
+
+   body {
+       font-family: serif;/*明朝体*/
+       background-color: #333; /*背景色*/
+       color: #fff /*文字の色*/
+   }
+   /*box-sizingを指定していく*/
+   *, *::before, *::after {
+       box-sizing: border-box;
+   }
+
+   header {
+       padding: 50px;
+       color: #993366;
+   }
+
+   @keyframes titleAnimation {
+       0% {
+           letter-spacing: 0.3em;
+           /*最初は透明にする*/
+           opacity: 0;
+       }
+    }
+
+   header h1 {
+       font-size: 70px;
+       font-weight: bold;
+       margin-bottom: 60px;
+       white-space: nowrap; /*改行させない*/
+       animation: titleAnimation 1.5s;
+   }
+
+   
+   main {
+       max-width: 1000px;
+       width: 100%;
+       margin: 50px auto;  /*上下の余白50px 真ん中寄席*/
+   }
+
+   .contents li {
+       position: relative;
+   }
+
+   .contents li.show h2,
+   .contents li.show p,
+   main .contents li.show img {
+     transform: none;
+     opacity: 1;
+   }
+/*一つ一つのliの間が欲しい。li間を200pxに指定*/
+   .contents li:not(:first-of-type) {
+     margin-top: 200px;
+   }
+/*奇数のcontentTextに対して右寄せ*/
+   .contents li:nth-of-type(odd) .contentsText {
+     left: 100px;
+   }
+/*偶数番目のcontentTextに対して左寄せ*/
+   .contents li:nth-of-type(even) .contentsText {
+       right: 100px;
+     /*align-items: flex-start;*/
+   }
+/*奇数番目の画像に対しては左寄せを施す*/
+   .contents li:nth-of-type(odd) img {
+     margin-left: auto;
+     transform: translate(-20px, 20px);
+}
+/*偶数番目の画像に対して右寄せを施す*/
+   .contents li:nth-of-type(even) img {
+     margin-right: auto;
+     transform: translate(20px, 20px);
+}
+
+   .contentsText {
+       display: flex;
+       flex-direction: column; /*縦に並ばせる*/
+       align-items: flex-end; /*boxに入る文字列を右寄せ*/
+       position: absolute; /*画像の上から距離を取ってあげる*/
+       top: 40px;
+    }
+
+ 
+
+/*h2はtranslateYで下からふわっと出させる*/
+   .contents h2 {
+       font-size: 50px;
+       font-weight: bold; /*太字*/
+       white-space: nowrap; /*改行しない*/
+       max-width: 340px;
+       background-color: rgba(20, 20, 20, .8);
+       padding: 10px 20px; /*周りの余白*/
+       line-height: 1.4;
+       letter-spacing: .05em; /*横方向の文字の間隔を空ける*/
+       border-radius: 10px;
+       opacity: 0;
+       transform: translateY(20px);
+       transition: 1s;
+   }   
+
+   .contents li:nth-of-type(odd) h2 {
+    transform: translateX(40px);
+    transition: 1s;
+   }
+
+   .contents li:nth-of-type(even) h2 {
+    transform: translateX(-40px);
+    transition: 1s;
+   }
+
+   .contents p {
+       line-height: 1.6;
+       background-color: rgba(169, 169, 169, .8);
+       font-size: 14px;
+       max-width: 340px;
+       padding: 15px;  /*内側の余白*/
+       margin-top: 30px; /*タイトルとの距離*/
+       border-radius: 10px;
+       opacity: 0;
+       transform: translateY(20px);
+       transition: 1s;
+    }
+
+
+   .contents img {
+       width: 65%; /*親に対して65%*/
+       display: block;
+       border-radius: 20px;
+       opacity: 0;
+       transform: translateX(-20px); /*-より、画像は絶対左から出てくる*/
+       transition: 1s .5s;
+   }
+
+   /*メニューバー表示*/
+   .Sass{
+    background-color: hsla(181, 100%, 45%, 0.2);
+    width: 120px;
+    height: 30px;
+    border-style:solid;
+    border-color:#993366;
+    border-radius: 5px;
+    }
+    .JavaScript{
+    background-color: hsla(181, 100%, 45%, 0.2);
+    width: 120px;
+    height: 30px;
+    border-style:solid;
+    border-color:#990066;
+    border-radius: 5px;
+    }
+    .HTML_CSS{
+    background-color: hsla(181, 100%, 45%, 0.2);
+    width: 120px;
+    height: 30px;
+    border-style:solid;
+    border-color:#990066;
+    border-radius: 5px;
+    }
+    .contents h2 {
+        transiton: 2.0s;/*2.0秒かける*/
+    }
+
+    .contents h2:hover{/*ホバーしたとき*/
+        background-color: rgba(156,100,210,0.5);
+        display: block;
+    }   

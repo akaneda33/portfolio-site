@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>自然言語処理</h1>
+    <li>人間が使う言語をPCが処理するには単語をベクトル化する必要がある。</li>
+    <ol>
+        <li>文章をmecabなどで分かち書き</li>
+        <li>分かち書きされたトークンに対してベクトル化<ol><li>Bag of words</li>
+        <li>Word2vec<ol><li>CBOW<br>一単語から周辺の単語を予測する。</li><li>skip-gram</li></ol></li></ol>
+        <br>前後関係の推論は可能だが、文章全体は読み解けない。それを解決するのがRNN</li>
+        <li>トークンをベクトル化することでcos類似度を使って定量的に文章の類似度を計算することが可能。</li>
+    </ol>
+    <h1>RNN Algorithm</h1>
+    <li>まじでRNNのアルゴリズム難すぎて禿げそう。でも純粋数学よりはマシか。</li>
+    <ol><li>one to many</li><li>many to one</li><li>seq2seq<br>時系列データを別の時系列データに変換する</li>
+    <li>双方向RNN<br></li></ol>
+    <li>逆伝播<br></li>
+    <li>出力層<br>シグモイド関数</li>
+    <li>一時刻前のリカレント層の状態を次の状態のリカレント層へ伝播することでデータにおける文脈に相当するものを保持する。</li>
+    <li>時刻が進むにつれて遠い過去の情報が薄れていく。現時点では必要ないけど遠い未来では必要になるといった特徴量に対して重みを大きくすることが難しくなる。</li>
+    <li>この問題を解決するのが以下のLSTM。</li>
+    <h1>LSTM</h1>
+    <li>勾配爆発を防ぐ。<br>学習に時間がかかる。これを解決するものが以下のGRU</li>
+    <h1>GRU</h1>
+    <Ii>状態を保存するメモリセルとメモリを効率的に扱うゲートが導入されている。</Ii>
+    <h1>隠れマルコフモデル</h1>
+    <li>観測でいない状態を加味したモデル。</li>
+    <h1>自己符号化器</h1>
+    <h1>変分自己符号化器(VAE)</h1>
+    <li>生成モデルの一種。入力データのを再現する。</li>
+    <h1>制限ボルツマンマシン(RBM)</h1>
+    <li></li>
+    <h1>How to use Twitter API</h1>
+    <li>twitter api申請するだけでもうめんどいじゃん。twitter社api使わせる気ないじゃん。</li>
+    <h1>正規表現</h1>
+    <li></li>
+    <li></li>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><font color="blue">ローカルで変更した内容をリモートリポジトリに反映させるには</font></h1>
+    <ul><h2><font color="red">結論から述べると、ローカルにリポジトリのクローンを作成するのが手っ取り早い。</font></h2>
+    <ol>
+    <li>cdで移動する。<br>ちなみに階層を１個上げるためには、cd../　とすれば良い。<br>
+    また、現在のディレクトリの中身を知りたかったら、dirをエンターすればよい。<br>
+    日本語なんて対応してないだろって思ったら、cd ドキュメント　であっさり移動できた笑<br>
+    C:\Users\akane\OneDrive\デスクトップ\english_vocab>cd ../<br>
+    C:\Users\akane\OneDrive\デスクトップ>cd ../<br>
+    C:\Users\akane\OneDrive>cd ドキュメント<br>
+    <li>リポジトリをクローンする</li>
+    C:\Users\akane\OneDrive\ドキュメント>git clone https://github.com/ie333/english_vocab.git<br>
+    C:\Users\akane\OneDrive\ドキュメント>cd english_vocab<br>
+    C:\Users\akane\OneDrive\ドキュメント\english_vocab>git status</li>
+    <li>dirで指定したディレクトリ先にクローンが完成されているかを確認。</li>
+    <li>cdで移動。<br>
+        C:\Users\akane\OneDrive\ドキュメント>cd english_vocab<br>
+        C:\Users\akane\OneDrive\ドキュメント\english_vocab>git status</li>
+    <li>git add .で変更内容を更新。<br> 
+    C:\Users\akane\OneDrive\ドキュメント\english_vocab>git add .<br>
+    C:\Users\akane\OneDrive\ドキュメント\english_vocab>git status<br>
+    すると赤字でmodified: index.htmlとか出た。
+    Changes not staged for commit:<br>
+    (use "git add <file>..." to update what will be committed)<br>
+    (use "git restore <file>..." to discard changes in working directory)<br>
+        modified:   index.html<br>
+    no changes added to commit (use "git add" and/or "git commit -a")
+    </li>次の作業へ<br>
+    <li>C:\Users\akane\OneDrive\ドキュメント\english_vocab>git add index.html<br>
+        C:\Users\akane\OneDrive\ドキュメント\english_vocab>git status<br>
+    すると緑色でmodified:   index.htmlが表示された！</li>
+    <li>commitする。
+        C:\Users\akane\OneDrive\ドキュメント\english_vocab>git commit -m "update"</li>
+    <li>次に定番のgit push origin masterでやったらエラーが出たからgit push origin HEADを実行。<br>
+    そしたらなんか出来た。めでたしめでたし。ということで調子に乗ってもう一回更新してみることに。。</li>
+    <li>git add .<br>
+        git status<br>
+        git commit -m "update"<br>
+        git push origin HEAD</li>
+    </ol>
+    <li>masterが無くなってた。mainで実行</li>
+    <h1>ブランチの定義</h1>
+    <li>前herokuをローカルディスクのディレクトリでいじったのでローカルにcloneが大量に出来てしまった…<br>とりあえずローカルに大量に出来てしまったcloneを削除せんと。
+    <br>.gitを削除しなきゃということだけど、まず.gitは隠しファイルの中に入っているので隠しファイルを表示してと。<br>
+    そして「Shift+削除」で完全に削除。そしたら消えた。スッキリした。gitのcloneは末端のディレクトリに作るに限る（(-_-;)。<br>
+    話は変わるが、ブランチってよく聞くけどそもそもブランチって何やねんということで,
+    まずはローカルにfix_htmlを作成。そしてブランチを理解するために以下のコマンドを実行。<br>
+    ブランチは要はバージョンのこと。git switch -c で、「新しくブランチを作って切り替える」という意味になる。</li>
+    <li>C:\Users\akane\github\english_vocab>git switch -c fix_html<br>Switched to a new branch 'fix_html'<br></li>
+    <li>git statusでステータスを確認すると、branchがfix_htmlになってる。<br>
+        C:\Users\akane\github\english_vocab>git status<br>On branch fix_html<br>nothing to commit, working tree clean</li>
+    <li>今度はbranchをmainに変更。すると、ローカルに作成したfix_htmlが削除された。なるほどなるほど。<br>
+        C:\Users\akane\github\english_vocab>git switch main<br>Switched to branch 'main'<br>Your branch is up to date with 'origin/main'.<br>
+        C:\Users\akane\github\english_vocab>git switch fix_html<br>Switched to branch 'fix_html'<br>C:\Users\akane\github\english_vocab>git add .<br>
+        C:\Users\akane\github\english_vocab>git status<br>On branch fix_html<br>Changes to be committed:<br>
+        (use "git restore --staged <file>..." to unstage)<br>    new file:   fix_html<br>C:\Users\akane\github\english_vocab>git commit -m "try"<br>
+        [fix_html 17ad5e2] try<br>1 file changed, 1 insertion(+)<br>create mode 100644 fix_html<br>C:\Users\akane\github\english_vocab>git status<br>
+        On branch fix_html<br>nothing to commit, working tree clean<br>C:\Users\akane\github\english_vocab>git switch main<br>
+        Switched to branch 'main'<br>Your branch is up to date with 'origin/main'.<br>C:\Users\akane\github\english_vocab>git status<br>
+        On branch main<br>Your branch is up to date with 'origin/main'.<br>nothing to commit, working tree clean</li>
+
+</body>
+</html>
