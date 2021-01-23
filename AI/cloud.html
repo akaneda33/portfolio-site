@@ -69,5 +69,21 @@
     </table>    
 
     <h1>Docker</h1>
+
+    <h1>Heroku</h1>
+    <li>PaaS(Plattform as a Service)と呼ばれるツールの一つで、アプリの実行環境をクラウド上で保存し、
+    アプリのデプロイにかかる作業を自動でやってくれる便利なサーバーのようなモノ</li>
+    <li>git init<br>gitと呼ばれるソースコード管理サービスを使うために、初期化しているコマンド。レポジトリを作成</li>
+    <li>heroku git:remote -a (アプリ名)<br>herokuというクラウドサーバと接続して特定のアプリに接続するために必要なコマンド。
+    <br>heroku上に自分のアプリ名のリモートリポジトリを作成</li>
+    <li>以下３つはローカル環境にあるファイルを、クラウド環境にあるHerokuサーバへ送信し、アプリとして機能させるために必要なコマンド</li>
+    <li>git add .<br>カレントディレクトリ以下の、変更があったすべてのファイルがadd(=後のコミット対象として指定すること) される。</li>
+
+    <li>git commit -m "(何を変更したかメッセージを書く)"<br>その変更を保存</li>
+    <li>git push heroku master<br>git pushでherokuにデプロイ。</li>
+    <li>heroku update<br>herokuをアップデート</li>
+    <li>heroku logs --tail<br>エラーの原因を探る。</li>
+    <li></li>
+    <li>Please tell me who you are.<br>初期設定ができていない</li>
         
 </html>

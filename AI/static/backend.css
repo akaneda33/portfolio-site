@@ -1,0 +1,43 @@
+@charset "utf-8"; /*文字化けしないように設定*/
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    height: 200vh; /*ブラウザの高さの２倍*/
+
+}
+
+.menuButton {
+    display: block;
+    height: 80px;
+    width: 80px;
+    background-color: pink;
+    position: fixed;/*要素の固定。スクロールしたらついてくるようにする*/
+    top: 0;
+    right: 0;
+}
+/*ピンクの箱に横線を付ける*/
+.menuButton div {
+    height: 1px;
+    width: 60%;
+    background-color: #333333;
+    position: absolute;
+    top: 50%;
+    left: 50%;/*箱の左側の５０％の位置から線から登場*/
+    transform: translate(-50%, -50%);
+}
+
+.menuButton div:nth-of-type(1) {
+    transform: translate(-50%, -15px); /*(x軸方向, y軸方向)*/
+}
+
+.menuButton div:nth-of-type(3) {
+    transform: translate(-50%, 15px);
+}
