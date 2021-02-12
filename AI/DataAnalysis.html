@@ -15,7 +15,29 @@
         <li>So how do adtech companies get big data?<br>
         They use Location data, Receipt history.
         </li>
-        <h1><font color="blue">Stock Price Prediction</font></h1>
+        <h1><font color="blue">購買予測(atmacup#9)</font></h1>
+        <h3>お題</h3>
+        <li>スマートショッピングカート から取得されたある時点までの購買データを用いて、その後の商品、
+            ビール、お菓子、カップ麺などの購入確率の予測(買うかどうか)を行う。</li>
+        <h3>データ</h3>
+        <h4>cartlog.csv</h4>
+        <li>セッション:レジカートが一回の起動から停止するまでの期間　と定義する。</li>
+        購入につながるセッションもあればつばがらないセッションもある。</li>
+        <li>2020-08-01 よりも前のログは、セッション内で起こるすべてのイベントが記録されてい</li>
+        <li>2020-08-01 よりもあとのセッションでは、一定時間より前のイベントしか見ることが出来ない。そのセッションで
+        どの時間までのログが見れるかはこのデータに記録されてる。</li>
+        <h4>表記揺れを直す</h4>
+        <li>cartlog.csv中のvalue_1 は複数の型が混合している。よって、明示的に文字列として読み込むと良い。</li>
+        <h3>meta.csv</h3>
+        <li>time_elapsed カラム<br>見ることが出来るログの最大時間(分)。学習期間のログはすべて閲覧可能なため None<br>
+            テスト期間はセッションごとに見られる時間が異なる。</li>
+        <h3>test.csv</h3>
+        <li>予測対象のセッションが格納されたデータ。</li>
+        <h3>product_master.csv</h3>
+        <li></li>
+        <h3> user_master.csv</h3>
+        <li>ユーザーごとの年齢・性別が紐づくマスター情報</li>
+
         <h2>Domain knowledge</h2>
         <li>lInvestment trusts<br>
             A product that summarizes money collected from investors as one large fund and is invested and operated by management experts in stocks, bonds, etc.
@@ -28,14 +50,7 @@
         <li>Decision tree analysis<br>
             This is an analysis method that calculates probabilities based on whether they belong to conditions such as Yes/No.
         </li>
-        <h1>Bagging & Boosting</h1>
-        <li></li>
-        <h1><font color="blue">Regression</font></h1>
-        <h2>Steps</h2>
-        <ol>
-            <li></li>
-        </ol>
-        <li>スパース性とは<br>物事の本質的な特徴を決定づける要素はわずかであるという性質。英語でスカスカという意味。</li>
+        
         <li>特徴選択とは<br>機械学習モデルの予測精度の改善を目的として訓練データの中からターゲットの予測により、強い関連がある特徴を選択すること。</li>
         <li>正規化を行う前に<br>外れ値を外そう。もしこの操作が逆だったら、正規化施したら０側にデータが偏ってしまう。</li>
         <h1>Time Series Analysis</h1>
