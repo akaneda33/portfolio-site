@@ -1,0 +1,292 @@
+@media screen and (max-width: 1024px) {
+  .artist-round img {
+    height: 200px;
+    width: 200px;
+  }
+  #header {
+    height: 100%;
+    position: unset;
+  }
+
+  #header .header-content {
+    //padding: 45px 0;
+    height: 0px;
+    padding: 0px;
+  }
+
+  #header.fixed {
+    background-color: rgba(0, 0, 0, 0);
+    position: none;
+  }
+  .nav-toggle {
+    display: block;
+  }
+
+  .navigation {
+    position: fixed;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+  }
+  .navigation .primary-nav {
+    position: relative;
+    top: 45%;
+    -moz-transform: translateY(-45%);
+    -ms-transform: translateY(-45%);
+    -webkit-transform: translateY(-45%);
+    transform: translateY(-45%);
+  }
+  .navigation li {
+    display: block;
+    margin-bottom: 20px;
+    margin-right: 0px;
+  }
+
+  .navigation a {
+    color: rgb(255, 255, 255);
+    display: block;
+    font-size: 25px;
+    margin: 0;
+    text-align: center;
+  }
+
+  .person {
+    margin: 0 auto 50px;
+  }
+  .person-content {
+    text-align: center;
+  }
+  .person .social-icons li {
+    display: inline-block;
+    float: none;
+    margin-bottom: 5px;
+  }
+
+  .testimonials blockquote {
+    padding: 20px 5% 0;
+  }
+  .testimonials p {
+    font-size: 26px;
+  }
+
+  .flex-control-nav {
+    bottom: 20px;
+  }
+
+  .menu-sns {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-sns ul {
+  }
+  .menu-sns li {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .banner-text img {
+    width: 100%;
+    min-width: 0px;
+  }
+  .pc {
+    display: none;
+  }
+  .sp {
+    display: inline-block;
+  }
+
+  .googlemap {
+    width: 100%;
+    padding-left: 0px;
+
+    padding-right: 0px;
+  }
+  .googlemap iframe {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    left: 33%;
+  }
+  .h3 {
+  }
+
+  .announce_banner {
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #header .header-content {
+    //padding: 45px 0;
+    height: 0px;
+    padding: 0px;
+  }
+  #header {
+    height: 0px;
+  }
+
+  .banner {
+    min-height: 100% !important;
+  }
+  .banner-text {
+    padding-top: 5%;
+  }
+  .banner-text h1 {
+    font-size: 42px;
+  }
+  .banner-text p {
+    font-size: 18px;
+  }
+  .innerbanner-text {
+    padding-top: 30%;
+  }
+  .flexslider {
+    padding-bottom: 80px;
+  }
+
+  .flex-control-nav {
+    width: 100%;
+  }
+
+  .footer .footer-col {
+    margin-bottom: 50px;
+  }
+
+  .googlemap {
+    width: 100%;
+  }
+  .inner-description img.frag {
+    width: 100%;
+  }
+  .dropdown-menu {
+    left: 36%;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 640px) {
+  #header .header-content {
+    padding: 45px 0;
+  }
+
+  #header .header-content {
+    padding: 45px 0;
+  }
+
+  .banner-text {
+    padding-top: 15%;
+  }
+
+  .innerbanner-text {
+    padding-top: 35%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .artist-round img {
+    height: 125px;
+    width: 125px;
+  }
+
+  #header .header-content {
+    padding: 15px 0;
+  }
+  .banner-text {
+    padding-top: 15%;
+    padding-bottom: 10%;
+  }
+  .banner-text h1 {
+    font-size: 32px;
+  }
+  .innerbanner-text {
+    padding-top: 25%;
+  }
+  .text-center h1 {
+    font-size: 32px;
+  }
+  .banner-text img {
+    width: 100%;
+    min-width: 0px;
+  }
+  .section {
+    padding: 0px 0px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+  .dropdown-menu {
+    left: 22%;
+  }
+  .train_ann {
+    min-height: 4px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .artist-round img {
+    height: 125px;
+    width: 125px;
+  }
+
+  #header .header-content {
+    padding: 15px 0;
+  }
+  .navigation a {
+    color: rgb(255, 255, 255);
+  }
+
+  .banner-text {
+    padding-top: 15%;
+    padding-bottom: 10%;
+  }
+  .innerbanner-text {
+    padding-top: 55%;
+  }
+  .testimonials blockquote {
+    padding: 20px 5% 0;
+  }
+  .testimonials p {
+    font-size: 26px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+
+  .n-table-left {
+    font-size: 15px;
+  }
+
+  .n-table-right {
+    font-size: 15px;
+  }
+
+  .train_ann {
+    min-height: 4px;
+  }
+}
