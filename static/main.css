@@ -247,4 +247,8 @@
     .contents h2:hover{/*ホバーしたとき*/
         background-color: rgba(156,100,210,0.5);
         display: block;
-    }   
+    }
+
+    a:visited {
+        color:white;
+    }
