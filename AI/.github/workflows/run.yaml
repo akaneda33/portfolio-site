@@ -1,0 +1,7 @@
+name: formatter-github-actions
+on: [push]
+jobs:
+  lint-sql:
+    steps:
+      - name: Lint sql
+        run: "sqlfluff lint sample_sql --dialect bigquery"

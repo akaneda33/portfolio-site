@@ -1,0 +1,27 @@
+[sqlfluff:rules]
+tab_space_size = 2
+
+[sqlfluff:indentation]
+indented_joins = true
+indented_using_on = true
+
+[sqlfluff:rules:L010]
+capitalisation_policy = upper
+
+[sqlfluff:rules:L014]
+extended_capitalisation_policy = lower
+
+[sqlfluff:rules:L016]
+max_line_length = 80
+
+[sqlfluff:rules:L030]
+extended_capitalisation_policy = upper
+
+[sqlfluff:rules:L052]
+multiline_newline = false
+
+[sqlfluff:rules:L062]
+blocked_words = between
+
+
+
